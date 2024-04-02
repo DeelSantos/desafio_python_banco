@@ -47,6 +47,10 @@ def depositar_dinheiro(saldo, extrato):
     return saldo, extrato
 
 
+def ver_extrato(saldo, extrato):
+    print(extrato)
+    print(f"Seu saldo é de {saldo:.2f}")
+
 while True:
     
     
@@ -72,8 +76,7 @@ while True:
         
     elif opcao == "e":
         print("******************Extrato*********************")
-        print(extrato)
-        print(f"Seu saldo é de {saldo:.2f}")
+        ver_extrato(saldo, extrato)
     
         
         
