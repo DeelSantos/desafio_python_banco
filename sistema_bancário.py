@@ -13,7 +13,7 @@ extrato = ""
 numero_saques = 0
 LIMITE_SAQUES = 3
 
-def sacar_dinheiro (saldo, limite, extrato, numero_saques, LIMITE_SAQUES):
+def sacar_dinheiro (*saldo, limite, extrato, numero_saques, LIMITE_SAQUES):
     valor = float(input("Qual valor de saque? "))
         
     excedeu_saldo = valor > saldo
@@ -37,7 +37,7 @@ def sacar_dinheiro (saldo, limite, extrato, numero_saques, LIMITE_SAQUES):
 
 
 def depositar_dinheiro(saldo, extrato):
-    valor = float(input("Qual valor do depósito? "))
+    valor = float(input("Qual valor do depósito? ")) 
     if valor < 0:
         print("Valor indisponivel, favor colocar somentes valores disponiveis")
         
