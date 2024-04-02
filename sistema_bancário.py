@@ -33,7 +33,18 @@ def sacar_dinheiro (saldo, limite, extrato, numero_saques, LIMITE_SAQUES):
         saldo = saldo - valor
         extrato += f"Saque realizado de: {valor:.2f}\n"
         numero_saques += 1
-    return saldo
+    return saldo, extrato
+
+
+def depositar_dinheiro(saldo, extrato):
+    valor = float(input("Qual valor do depósito? "))
+    if valor < 0:
+        print("Valor indisponivel, favor colocar somentes valores disponiveis")
+        
+    else:
+        saldo = saldo + valor
+        extrato += f"Deposito de: {valor:.2f}\n"
+    return saldo, extrato
 
 
 while True:
@@ -43,13 +54,7 @@ while True:
     
     if opcao == "d":
         print("*****************Depósito*********************")
-        valor = float(input("Qual valor do depósito? "))
-        if valor < 0:
-            print("Valor indisponivel, favor colocar somentes valores disponiveis")
-        
-        else:
-            saldo = saldo + valor
-            extrato += f"Deposito de: {valor:.2f}\n"
+        saldo = depositar_dinheiro(saldo, extrato)
            
             
         
@@ -57,7 +62,7 @@ while True:
     elif opcao == "s":
         
         print("******************Sacar***********************")
-        sacar_dinheiro(saldo, limite, extrato, numero_saques, LIMITE_SAQUES)
+        sacar_dinheiro(saldo=saldo, limite=limite, extrato=extrato, numero_saques=numero_saques, LIMITE_SAQUES=LIMITE_SAQUES)
             
             
         
